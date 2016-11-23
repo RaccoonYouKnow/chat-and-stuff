@@ -1,35 +1,36 @@
 <?php
 /**
  * Database functions for a MySQL with PHP tutorial
- * 
+ *
  * @copyright Eran Galperin
  * @license MIT License
  * @see http://www.binpress.com/tutorial/using-php-with-mysql-the-right-way/17
  */
- 
+
 /**
  * Connect to the database
- * 
+ *
  * @return bool false on failure / mysqli MySQLi object instance on success
  */
 function db_connect() {
-    
 
-    // Define connection as a static variable, to avoid connecting more than once 
+
+    // Define connection as a static variable, to avoid connecting more than once
     static $connection;
 
     // Try and connect to the database, if a connection has not been established yet
     if(!isset($connection)) {
 		// Load configuration as an array. Use the actual location of your configuration file
 		// Put the configuration file outside of the document root
-		$config = parse_ini_file('./config.ini'); 
-        $connection = mysqli_connect('localhost',$config['username'],$config['password'],$config['dbname']);
+		  //$config = parse_ini_file('./config.ini');
+        //$connection = mysqli_connect('localhost',$config['username'],$config['password'],$config['dbname']);
+        $connection = mysqli_connect('localhost',"id237297_kasper","kasperpass","id237297_kasperchat");
     }
 
     // If connection was not successful, handle the error
     if($connection === false) {
         // Handle error - notify administrator, log to a file, show an error screen, etc.
-        return mysqli_connect_error(); 
+        return mysqli_connect_error();
     }
     return $connection;
 }
@@ -74,7 +75,7 @@ function db_select($query) {
 
 /**
  * Fetch the last error from the database
- * 
+ *
  * @return string Database error message
  */
 function db_error() {
@@ -92,4 +93,3 @@ function db_quote($value) {
     $connection = db_connect();
     return "'" . mysqli_real_escape_string($connection,$value) . "'";
 }
-
