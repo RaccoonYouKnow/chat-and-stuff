@@ -15,17 +15,20 @@ $rows = db_select("SELECT user, message, dateandtime FROM messages order by date
 ?>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css?<?php echo rand() ?>">
 </head>
 <body>
-  <h1>Överlägset chattprogram!</h1> <img src= >
-  <h2>Chatta med irriterande människor!</h2>
+<div id="header">
+  <h1>text </h1> <img src= >
+  <h2 class="tagline">Tjöta med irriterande människor!</h2>
+</div>
 <?php
 foreach ($rows as $row) {
   echo "<div>" . $row['message'] ." <br> ". $row['user'] ."-".$row['dateandtime']. " <br> <br> </div>";
 }
 ?>
-  <h2>Klockan är nu <?php echo date('Y-m-d H:i:s') ?></h2>
+  <h2>Klockan är nu <br> <?php echo date('Y-m-d H:i:s') ?></h2>
 <form>
   <textarea name="message" rows="10" cols="30"></textarea><br>
   Namn: <input type="text" name="firstname">

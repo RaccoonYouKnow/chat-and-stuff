@@ -1,9 +1,8 @@
 body {
-    background-color: green;
+    background-color: lightgrey;
     font-size: 150%;
-}
-h1 {
-    color: blue;
+    margin-left: auto;
+
 }
 h2 {
     color: red;
@@ -11,17 +10,26 @@ h2 {
     -webkit-text-stroke-color: black;
 }
 h1 {
+  color: blue;
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
 }
 section {
-     color:
    -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
    font-size: 250%;
    font-family: monospace;
 }
-h3  { font-size: 200%;
+h3  {
+
   }
 p   { font-size: 50%;
   }
+form {
+
+}
+.tagline { font-size: 80%;
+  -webkit-text-stroke-width: 0px;
+  -webkit-text-stroke-color: black;
+  margin-top: -30px;
+}
