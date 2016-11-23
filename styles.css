@@ -1,0 +1,27 @@
+body {
+    background-color: green;
+    font-size: 150%;
+}
+h1 {
+    color: blue;
+}
+h2 {
+    color: red;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+h1 {
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+}
+section {
+     color:
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+   font-size: 250%;
+   font-family: monospace;
+}
+h3  { font-size: 200%;
+  }
+p   { font-size: 50%;
+  }
