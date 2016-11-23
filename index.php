@@ -1,6 +1,6 @@
-<?php require 'db_functions.php'; ?>
-
 <?php
+
+require 'db_functions.php';
 
 if ( @isset($_GET['message']) ) {
   $msg = db_quote($_GET['message']);
@@ -11,7 +11,6 @@ if ( @isset($_GET['message']) ) {
 $rows = db_select("SELECT user, message, dateandtime FROM messages order by dateandtime desc limit 10 ");
 
 ?>
-
 <html>
 <head>
   <link rel="stylesheet" href="styles.css?<?php echo rand() ?>">
@@ -19,13 +18,11 @@ $rows = db_select("SELECT user, message, dateandtime FROM messages order by date
 <body>
   <h1>Överlägset chattprogram!</h1> <img src= >
   <h2>Chatta med irriterande människor!</h2>
-
 <?php
 foreach ($rows as $row) {
   echo "<div>" . $row['message'] ." <br> ". $row['user'] ."-".$row['dateandtime']. " <br> <br> </div>";
 }
 ?>
-
   <h2>Klockan är nu <?php echo date('Y-m-d H:i:s') ?></h2>
 <form>
   <textarea name="message" rows="10" cols="30"></textarea><br>
