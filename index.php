@@ -30,8 +30,6 @@ foreach ($rows as $row) {
 }
 ?>
 
-
-
   <h2>Klockan är nu <?php echo date('Y-m-d H:i:s') ?></h2>
 <form>
   <textarea name="message" rows="10" cols="30"></textarea><br>
