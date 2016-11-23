@@ -21,12 +21,8 @@ $rows = db_select("SELECT user, message, dateandtime FROM messages order by date
   <h2>Chatta med irriterande människor!</h2>
 
 <?php
-//var_dump($rows);
 foreach ($rows as $row) {
-
   echo "<div>" . $row['message'] ." <br> ". $row['user'] ."-".$row['dateandtime']. " <br> <br> </div>";
-  //print_r ($rows) ;
-    //echo " $ <br>";
 }
 ?>
 
