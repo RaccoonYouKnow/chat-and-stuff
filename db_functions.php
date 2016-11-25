@@ -91,5 +91,16 @@ function db_error() {
  */
 function db_quote($value) {
     $connection = db_connect();
-    return "'" . mysqli_real_escape_string($connection,$value) . "'";
+    return "'" . escape($value) . "'";
+}
+
+/**
+ * Quote and escape value for use in a database query
+ *
+ * @param string $value The value to be quoted and escaped
+ * @return string The quoted and escaped string
+ */
+function escape($value) {
+    $connection = db_connect();
+    return mysqli_real_escape_string($connection,$value);
 }

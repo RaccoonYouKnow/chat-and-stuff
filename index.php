@@ -15,7 +15,12 @@ if ( @isset($_POST['message']) ) {
   die;
 }
 
-$rows = db_select("SELECT user, message, dateandtime FROM messages order by dateandtime desc limit 10 ");
+$size = 10;
+if ( @isset($_GET['size']) ) {
+  $size = escape($_GET['size']);
+}
+
+$rows = db_select("SELECT user, message, dateandtime FROM messages order by dateandtime desc limit " . $size);
 ?>
 
 <html>
@@ -55,7 +60,14 @@ $rows = db_select("SELECT user, message, dateandtime FROM messages order by date
 </FORM>
 <?php
 foreach ($rows as $row) {
-  echo "<div>" . $row['message'] ." <br> ". $row['user'] ."<br>".$row['dateandtime']. " <br> <br> </div>";
+  $mess = $row['message'];
+
+  $mess = str_replace(":)", "<img width=\"25\" height=\"25\" src=\"http://emojione.com/wp-content/uploads/assets/emojis/1f600.svg\">" , $mess);
+  $mess = str_replace("<script", "INTE HACKA!" , $mess);
+$row['user'] = str_replace(":)", "<img width=\"25\" height=\"25\" src=\"http://emojione.com/wp-content/uploads/assets/emojis/1f600.svg\">" , $row['user']);
+  echo "<div>" . $mess ." <br> ". $row['user'] ."<br>".$row['dateandtime']. " <br> <br> </div>";
+
+
 }
 ?>
 
@@ -73,6 +85,8 @@ foreach ($rows as $row) {
 </form>
 
 <p> Gjord utav Kasper med viss hjälp av Pål! No rights reserved!</p>
+
+<p>Visar de <?php echo $size ?> senaste inläggen</p>
 
 <?php
 echo rand() . "\n";
