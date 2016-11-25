@@ -47,10 +47,12 @@ $rows = db_select("SELECT user, message, dateandtime FROM messages order by date
 </head>
 <body>
 <div id="header">
-  <h1>Crapchat!</h1>
+  <h1><img src="img/crapchat.png" width="300" height="150"  alt="crapchat"></h1>
   <h2 class="tagline">Tjöta med irriterande människor!</h2>
 </div>
-
+<FORM>
+<INPUT id="a2"TYPE="button" width="300" height="150" onClick="history.go(0)" VALUE="ladda om sidan!">
+</FORM>
 <?php
 foreach ($rows as $row) {
   echo "<div>" . $row['message'] ." <br> ". $row['user'] ."<br>".$row['dateandtime']. " <br> <br> </div>";
@@ -58,6 +60,7 @@ foreach ($rows as $row) {
 ?>
 
   <h2>Klockan är nu <br> <?php echo date('Y-m-d H:i:s') ?></h2>
+
 <form method="post" >
   <textarea name="message" action="form1.php" rows="10" cols="30"></textarea><br>
   Namn: <input type="text" name="firstname" value="<?php
@@ -66,13 +69,15 @@ foreach ($rows as $row) {
   }
 ?>">
 
-  <input type="submit" value="Skicka!">
+  <input type="submit"  value="Skicka!">
 </form>
+
 <p> Gjord utav Kasper med viss hjälp av Pål! No rights reserved!</p>
 
 <?php
 echo rand() . "\n";
 ?>
+
 
 </body>
 </html>
