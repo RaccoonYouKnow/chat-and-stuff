@@ -65,8 +65,10 @@ foreach ($rows as $row) {
   $mess = str_replace(":)", "<img width=\"25\" height=\"25\" src=\"http://emojione.com/wp-content/uploads/assets/emojis/1f600.svg\">" , $mess);
   $mess = str_replace("<script", "INTE HACKA!" , $mess);
 $row['user'] = str_replace(":)", "<img width=\"25\" height=\"25\" src=\"http://emojione.com/wp-content/uploads/assets/emojis/1f600.svg\">" , $row['user']);
-  echo "<div>" . $mess ." <br> ". $row['user'] ."<br>".$row['dateandtime']. " <br> <br> </div>";
+$mess = str_replace("Raccoon", "<img width=\"25\" height=\"25\" src=\"https://upload.wikimedia.org/wikipedia/commons/e/ed/Raccoon_(Procyon_lotor)_2.jpg\">" , $mess);
+$row['user'] = str_replace("Raccoon", "<img width=\"25\" height=\"25\" src=\"https://upload.wikimedia.org/wikipedia/commons/e/ed/Raccoon_(Procyon_lotor)_2.jpg\">" , $row['user']);
 
+echo "<div>" . $mess ." <br> ". $row['user'] ."<br>".$row['dateandtime']. " <br> <br> </div>";
 
 }
 ?>
